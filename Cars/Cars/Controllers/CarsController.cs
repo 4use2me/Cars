@@ -3,7 +3,6 @@ using Cars.Models.Cars;
 using Microsoft.AspNetCore.Mvc;
 using Cars.Core.Dto;
 using Cars.Core.ServiceInterface;
-using Cars.Core.Domain;
 
 namespace Cars.Controllers
 {

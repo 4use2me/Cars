@@ -3,7 +3,6 @@ using Cars.Core.Domain;
 using Cars.Core.Dto;
 using Cars.Core.ServiceInterface;
 using Cars.Data;
-using System;
 
 namespace Cars.ApplicationServices.Services
 {
