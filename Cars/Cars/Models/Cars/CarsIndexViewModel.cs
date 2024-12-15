@@ -1,6 +1,6 @@
-﻿namespace Cars.Core.Domain
+﻿namespace Cars.Models.Cars
 {
-    public class Car
+    public class CarsIndexViewModel
     {
         public Guid Id { get; set; }
         public string? Make { get; set; }
@@ -10,8 +10,5 @@
         public int Mileage { get; set; }
         public string? Fuel { get; set; }
         public string? Color { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime ModifiedAt { get; set; }
     }
 }
