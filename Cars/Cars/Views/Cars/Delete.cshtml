@@ -1,5 +1,5 @@
 ﻿@model Cars.Models.Cars.CarViewModel
-<h1>Car details</h1>
+<h1>Delete car</h1>
 <div>
     <hr />
     <dl class="row">
@@ -44,5 +44,10 @@
             @Html.DisplayFor(Model => Model.ModifiedAt)
         </div>
     </dl>
-    <a asp-action="Index" asp-controller="cars" class="btn btn-info">Back</a>
+
+    <form asp-action="DeleteConfirmation">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" asp-controller="cars" class="btn btn-success">Back</a>
+    </form>
 </div>

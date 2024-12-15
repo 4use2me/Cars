@@ -45,7 +45,7 @@ namespace Cars.Controllers
             {
                 return View("Error");
             }
-            var vm = new CarDetailsViewModel();
+            var vm = new CarViewModel();
             vm.Id = car.Id;
             vm.Make = car.Make;
             vm.Model = car.Model;
@@ -67,7 +67,7 @@ namespace Cars.Controllers
             {
                 return NotFound();
             }
-            var vm = new CarCreateUpdateViewModel();
+            var vm = new CarViewModel();
             vm.Id = car.Id;
             vm.Make = car.Make;
             vm.Model = car.Model;
@@ -82,7 +82,7 @@ namespace Cars.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(CarCreateUpdateViewModel vm)
+        public async Task<IActionResult> Update(CarViewModel vm)
         {
             var dto = new CarDto()
             {
@@ -103,6 +103,39 @@ namespace Cars.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return RedirectToAction(nameof(Index), vm);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var car = await _carServices.DetailAsync(id);
+            if (car == null)
+            {
+                return NotFound();
+            }
+            var vm = new CarViewModel();
+            vm.Id = car.Id;
+            vm.Make = car.Make;
+            vm.Model = car.Model;
+            vm.Year = car.Year;
+            vm.Price = car.Price;
+            vm.Mileage = car.Mileage;
+            vm.Fuel = car.Fuel;
+            vm.Color = car.Color;
+            vm.CreatedAt = car.CreatedAt;
+            vm.ModifiedAt = car.ModifiedAt;
+            return View(vm);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmation(Guid id)
+        {
+            var car = await _carServices.Delete(id);
+
+            if (car == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Cars.Core.ServiceInterface
     {
         Task<Car> DetailAsync(Guid id);
         Task<Car> Update(CarDto dto);
+        Task<Car> Delete(Guid id);
     }
 }

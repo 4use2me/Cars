@@ -1,6 +1,6 @@
 ﻿namespace Cars.Models.Cars
 {
-    public class CarDetailsViewModel
+    public class CarViewModel
     {
         public Guid Id { get; set; }
         public string? Make { get; set; }
