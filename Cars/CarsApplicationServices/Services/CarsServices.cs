@@ -23,5 +23,24 @@ namespace Cars.ApplicationServices.Services
                 .FirstOrDefaultAsync(x => x.Id == id);
             return result;
         }
+
+        public async Task<Car> Update(CarDto dto)
+        {
+            Car domain = new();
+            domain.Id = dto.Id;
+            domain.Make = dto.Make;
+            domain.Model = dto.Model;
+            domain.Year = dto.Year;
+            domain.Price = dto.Price;
+            domain.Mileage = dto.Mileage;
+            domain.Fuel = dto.Fuel;
+            domain.Color = dto.Color;
+            domain.CreatedAt = dto.CreatedAt;
+            domain.ModifiedAt = DateTime.Now;
+            _context.Cars.Update(domain);
+            await _context.SaveChangesAsync();
+
+            return domain;
+        }
     }
 }
