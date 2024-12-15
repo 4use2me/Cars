@@ -1,5 +1,14 @@
 ﻿@model Cars.Models.Cars.CarViewModel
-<h1>Update car</h1>
+
+@if (Model.Id.HasValue)
+{
+    <h1>Update car</h1>
+}
+else
+{
+    <h1>Create car</h1>
+}
+
 <div>
     <hr />
     <form method="post" enctype="multipart/form-data">
@@ -48,6 +57,13 @@
                 <input asp-for="Color" class="form-control" />
             </div>
         </div>
-        <input asp-action="Update" asp-controller="cars" type="submit" class="btn btn-primary" value="Update" />
+        @if (Model.Id.HasValue)
+        {
+            <input asp-action="Update" asp-controller="cars" type="submit" class="btn btn-primary" value="Update" />
+        }
+        else
+        {
+            <input asp-action="Create" asp-controller="cars" type="submit" class="btn btn-primary" value="Create" />
+        }
     </form>
 </div>

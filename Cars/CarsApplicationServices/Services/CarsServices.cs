@@ -17,6 +17,25 @@ namespace Cars.ApplicationServices.Services
         {
             _context = context;
         }
+
+        public async Task<Car> Create(CarDto dto)
+        {
+            Car car = new Car();
+            car.Id = Guid.NewGuid();
+            car.Make = dto.Make;
+            car.Model = dto.Model;
+            car.Year = dto.Year;
+            car.Price = dto.Price;
+            car.Mileage = dto.Mileage;
+            car.Fuel = dto.Fuel;
+            car.Color = dto.Color;
+            car.CreatedAt = DateTime.Now;
+            car.ModifiedAt = DateTime.Now;
+            await _context.Cars.AddAsync(car);
+            await _context.SaveChangesAsync();
+            return car;
+        }
+
         public async Task<Car> DetailAsync(Guid id)
         {
             var result = await _context.Cars
@@ -27,7 +46,7 @@ namespace Cars.ApplicationServices.Services
         public async Task<Car> Update(CarDto dto)
         {
             Car domain = new();
-            domain.Id = dto.Id;
+            domain.Id = (Guid)dto.Id;
             domain.Make = dto.Make;
             domain.Model = dto.Model;
             domain.Year = dto.Year;

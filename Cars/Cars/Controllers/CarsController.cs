@@ -38,6 +38,38 @@ namespace Cars.Controllers
         }
 
         [HttpGet]
+        public IActionResult Create()
+        {
+            CarViewModel result = new();
+
+            return View("CreateUpdate", result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(CarViewModel vm)
+        {
+            var dto = new CarDto()
+            {
+                Id = vm.Id,
+                Make = vm.Make,
+                Model = vm.Model,
+                Year = vm.Year,
+                Price = vm.Price,
+                Mileage = vm.Mileage,
+                Fuel = vm.Fuel,
+                Color = vm.Color,
+                CreatedAt = vm.CreatedAt,
+                ModifiedAt = vm.ModifiedAt
+            };
+            var result = await _carServices.Create(dto);
+            if (result == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index), vm);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Details(Guid id)
         {
             var car = await _carServices.DetailAsync(id);
