@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars", "Cars\Cars.csproj", "{342187E1-2136-4E05-9795-3CA1260BA2A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars", "Cars\Cars.csproj", "{342187E1-2136-4E05-9795-3CA1260BA2A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars.ApplicationServices", "CarsApplicationServices\Cars.ApplicationServices.csproj", "{365DB1D7-A5F2-462F-8D51-3EBEA789ECE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.ApplicationServices", "CarsApplicationServices\Cars.ApplicationServices.csproj", "{365DB1D7-A5F2-462F-8D51-3EBEA789ECE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars.Core", "Cars.Core\Cars.Core.csproj", "{01E56116-7653-4005-B821-62E1910967C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Core", "Cars.Core\Cars.Core.csproj", "{01E56116-7653-4005-B821-62E1910967C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars.Data", "Cars.Data\Cars.Data.csproj", "{85A22150-9DA6-497F-9ADE-95B8FC60F27A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Data", "Cars.Data\Cars.Data.csproj", "{85A22150-9DA6-497F-9ADE-95B8FC60F27A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars.CarTest", "Cars.CarTest\Cars.CarTest.csproj", "{28C6F107-690D-4178-B0BC-B316F84FE800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{85A22150-9DA6-497F-9ADE-95B8FC60F27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85A22150-9DA6-497F-9ADE-95B8FC60F27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85A22150-9DA6-497F-9ADE-95B8FC60F27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C6F107-690D-4178-B0BC-B316F84FE800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C6F107-690D-4178-B0BC-B316F84FE800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C6F107-690D-4178-B0BC-B316F84FE800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C6F107-690D-4178-B0BC-B316F84FE800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

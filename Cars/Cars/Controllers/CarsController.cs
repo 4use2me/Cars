@@ -157,6 +157,7 @@ namespace Cars.Controllers
             vm.ModifiedAt = car.ModifiedAt;
             return View(vm);
         }
+
         [HttpPost]
         public async Task<IActionResult> DeleteConfirmation(Guid id)
         {

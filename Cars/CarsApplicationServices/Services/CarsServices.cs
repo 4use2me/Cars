@@ -45,7 +45,7 @@ namespace Cars.ApplicationServices.Services
         public async Task<Car> Update(CarDto dto)
         {
             Car domain = new();
-            domain.Id = (Guid)dto.Id;
+            domain.Id = (Guid?)dto.Id;
             domain.Make = dto.Make;
             domain.Model = dto.Model;
             domain.Year = dto.Year;
